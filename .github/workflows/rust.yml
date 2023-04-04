@@ -1,4 +1,4 @@
-cargo build --target wasm32-unknown-unknown && mv target/wasm32-unknown-unknown/debug/rec-wars.wasm rec-wars.wasmname: Rust
+name: Rust
 
 on:
   push:

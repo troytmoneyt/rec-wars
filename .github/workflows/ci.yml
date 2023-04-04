@@ -18,6 +18,7 @@ env:
   RUSTFLAGS: --deny warnings
 
 jobs:
+
   test:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -40,7 +41,15 @@ jobs:
         run: cargo build --verbose --target wasm32-unknown-unknown
       - name: Run tests
         run: cargo test --verbose --all-features
-
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v1.0.8
+        with:
+            # Artifact name
+            name: "jjdjdjdjdj"
+            # Path of the directory containing the static assets.
+            path: ""
+            # Duration after which artifact will expire in days.
+            retention-days: 1
   format:
     runs-on: ubuntu-latest
     steps:
